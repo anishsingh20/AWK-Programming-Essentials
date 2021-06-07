@@ -1,0 +1,6 @@
+office	first_name	last_name	company_name	address	city	county	state	zip	phone1	phone2	email	web
+President 	Annabelle	Boord	Corn Popper	523 Marquette Ave	Concord	Middlesex	MA	01742	978-697-6263	978-289-7717	annabelle.boord@cox.net	http://www.cornpopper.com
+Vice President	Stephaine	Vinning	Birite Foodservice Distr	3717 Hamann Industrial Pky	San Francisco	San Francisco	CA	94104	415-767-6596	415-712-9530	stephaine@cox.net	http://www.biritefoodservicedistr.com
+Secretary	Nelida	Sawchuk	Anchorage Museum Of Hist & Art	3 State Route 35 S	Paramus	Bergen	NJ	07652	201-971-1638	201-247-8925	nelida@gmail.com	http://www.anchoragemuseumofhistart.com
+Treasurer	Marguerita	Hiatt	Haber, George D Md	82 N Highway 67	Oakley	Contra Costa	CA	94561	925-634-7158	925-541-8521	marguerita.hiatt@gmail.com	http://www.habergeorgedmd.com
+Member at Large	Carmela	Cookey	Royal Pontiac Olds Inc	9 Murfreesboro Rd	Chicago	Cook	IL	60623	773-494-4195	773-297-9391	ccookey@cookey.org	http://www.royalpontiacoldsinc.com

@@ -1,0 +1,16 @@
+#!/bin/bash
+
+awk -Ft 'BEGIN {
+		print "<h1>Contact Us!</h1>"; 
+		print "<ul>" 
+	 }
+	 NR > 1 { # skip header line
+		print "<li>";
+		print $1, $2, $3 ": " ; # office, first_name, last_name
+		print "<a href=\"mailto:" $12 "\">" $12 "</a>"; # email
+		print "</li>";
+	 }
+	 END {
+		print "</ul>";
+	 }' $1 > officers.html
+
