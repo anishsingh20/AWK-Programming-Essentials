@@ -123,3 +123,94 @@ OR
 	anishanishzc
 	anishanishzc
 	anishbc
+
+
+
+
+
+### CONTROL STRUCTURES
+
+
+
+	A) awk '{ if ( NF < 8) {print "Short Line:", $0 } else { print "Long Line: ", $0 } }' Exercise\ Files/dukeofyork.txt 
+	
+	
+	Short Line: The grand old Duke of York
+	Short Line: He had ten thousand men
+	Long Line:  He marched them up to the top of the hill
+	Short Line: And he marched them down again
+	Long Line:  And when they were up they were up
+	Long Line:  And when they were down they were down
+	Short Line: And when they were only half-way up
+	Short Line: They were neither up nor down
+
+
+	OR We can create an AWK file and add the code inside it using -f flag:
+	
+	
+	awk -f condition.awk dukeofyork.txt 
+	
+	SHORT LINE: The grand old Duke of York
+	SHORT LINE: He had ten thousand men
+	LONG LINE: He marched them up to the top of the hill
+	SHORT LINE: And he marched them down again
+	SHORT LINE: And when they were up they were up
+	SHORT LINE: And when they were down they were down
+	SHORT LINE: And when they were only half-way up
+	SHORT LINE: They were neither up nor down
+	
+
+	The AWK File condition.awk:
+
+	{
+        	if (NF > 8)
+       	 	{	
+                	print("LONG LINE:", $0)
+        	}
+        	else
+		{
+			print("SHORT LINE:", $0)
+		}
+
+	}
+
+
+
+	B) FOR LOOP:
+	
+	{
+	        for  ( i = 1 ; i<=3; i++)
+	        {
+	                print "Line ", NR ",field ", i ": ", $i ;
+	        }
+	
+	}
+	
+	awk -f forloop.awk dukeofyork.txt 
+	
+	Line  1,field  1:  The
+	Line  1,field  2:  grand
+	Line  1,field  3:  old
+	Line  2,field  1:  He
+	Line  2,field  2:  had
+	Line  2,field  3:  ten
+	Line  3,field  1:  He
+	Line  3,field  2:  marched
+	Line  3,field  3:  them
+	Line  4,field  1:  And
+	Line  4,field  2:  he
+	Line  4,field  3:  marched
+	Line  5,field  1:  And
+	Line  5,field  2:  when
+	Line  5,field  3:  they
+	Line  6,field  1:  And
+	Line  6,field  2:  when
+	Line  6,field  3:  they
+	Line  7,field  1:  And
+	Line  7,field  2:  when
+	Line  7,field  3:  they
+	Line  8,field  1:  They
+	Line  8,field  2:  were
+	Line  8,field  3:  neither
+	
+	
