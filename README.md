@@ -70,3 +70,56 @@ OR
 
 	2) awk -F, '{print $1 "\t" $2 "\t" $3}' nameemailavg.csv 
 
+
+
+ ### REGULAR EXPRESSIONS:
+
+
+	A) awk '$4 ~ /up/{print $0}' dukeofyork.txt  : 4th field contains regular expression pattern /up/
+
+	He marched them up to the top of the hill
+	They were neither up nor down
+
+
+
+	B) awk '$3 ~ /the/{print}' dukeofyork.txt  : 3rd field matches /the/
+	He marched them up to the top of the hill
+	And when they were up they were up
+	And when they were down they were down
+	And when they were only half-way up
+	They were neither up nor down
+
+
+
+	C) awk '$3 ~ /^the/{print}' dukeofyork.txt  : 3rd field begins with /the/
+	He marched them up to the top of the hill
+	And when they were up they were up
+	And when they were down they were down
+	And when they were only half-way up
+	
+	
+	
+	D) awk '/a[a-zA-Z]*c/{print $0}' : Match 0 or more occurrences of the char set pattern in between i.e [a-zA-Z]*:
+
+	abbddbBc
+	abbddbBc
+	abbbbbdssbbC
+	abHFYEHSHc
+	abHFYEHSHc
+
+
+
+	E) awk '/a[a-zA-Z]{3}c/{print $0}': Exactly matches 3 occurrences of the pattern [a-zA-Z] in between:
+	abc
+	abbc
+	aABCc
+	aABCc
+	aZDbc
+	aZDbc
+	
+	
+	
+	F) Grouping characters: awk '/(anish){2}[a-z]c/{print $0}'. : Exactly.2 occurrences of pattern (anish):
+	anishanishzc
+	anishanishzc
+	anishbc
