@@ -238,3 +238,55 @@ OR
 	Gladys Rim	gladys.rim@rim.org	243
 	Yuki Whobrey	yuki_whobrey@aol.com	128
 	Fletcher Flosi	fletcher.flosi@yahoo.com	221
+	
+	
+		
+	B) Formatting output with width and precision specifiers:
+
+	awk -F, '{printf("%-20s %-35s %3f\n",$1,$2,$3)}' nameemailavg.csv
+	
+	Art Venere           art@venere.org                      256.623944
+	Lenna Paprocki       lpaprocki@hotmail.com               259.688783
+	Donette Foller       donette.foller@cox.net              282.329798
+	Simona Morasca       simona@morasca.com                  139.519116
+	Dominque Dickerson   dominque.dickerson@dickerson.org    167.045198
+	Leota Dilliard       leota@hotmail.com                   253.646335
+	Sage Wieser          sage_wieser@cox.net                 155.555768
+	Kris Cho             kris@gmail.com                      210.794278
+	Minna Amigon         minna_amigon@yahoo.com              95.479554
+	Abel Maclead         amaclead@gmail.com                  225.774477
+	Kiley Caldarera      kiley.caldarera@aol.com             172.957629
+	Graciela Ruta        gruta@cox.net                       202.683648
+	Josephine Darakjy    josephine_darakjy@darakjy.org       178.877840
+	Cammy Albares        calbares@gmail.com                  290.446513
+	Mattie Poquette      mattie@aol.com                      283.239952
+	Meaghan Garufi       meaghan@hotmail.com                 227.142916
+	Gladys Rim           gladys.rim@rim.org                  243.459636	
+	Yuki Whobrey         yuki_whobrey@aol.com                128.321717
+	
+	
+
+	C) Width and precision specifier for decimal values: % <width/length> . <precision/no of digits after decimal>f:
+
+	awk -F, '{printf("%-20s %-35s %6.2f\n",$1,$2,$3)}' nameemailavg.csv
+	
+	Art Venere           art@venere.org                      256.62
+	Lenna Paprocki       lpaprocki@hotmail.com               259.69
+	Donette Foller       donette.foller@cox.net              282.33
+	Simona Morasca       simona@morasca.com                  139.52
+	Dominque Dickerson   dominque.dickerson@dickerson.org    167.05
+	Leota Dilliard       leota@hotmail.com                   253.65
+	Sage Wieser          sage_wieser@cox.net                 155.56
+	Kris Cho             kris@gmail.com                      210.79
+	Minna Amigon         minna_amigon@yahoo.com               95.48
+	Abel Maclead         amaclead@gmail.com                  225.77
+	Kiley Caldarera      kiley.caldarera@aol.com             172.96
+	Graciela Ruta        gruta@cox.net                       202.68
+	Josephine Darakjy    josephine_darakjy@darakjy.org       178.88
+	Cammy Albares        calbares@gmail.com                  290.45
+	Mattie Poquette      mattie@aol.com                      283.24
+	Meaghan Garufi       meaghan@hotmail.com                 227.14
+	Gladys Rim           gladys.rim@rim.org                  243.46
+	Yuki Whobrey         yuki_whobrey@aol.com                128.32
+	Fletcher Flosi       fletcher.flosi@yahoo.com            221.39
+
