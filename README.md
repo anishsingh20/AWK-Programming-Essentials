@@ -214,3 +214,27 @@ OR
 	Line  8,field  3:  neither
 	
 	
+### FORMATTING THER OUTPUT- USING PRINTF
+
+	A) awk -F, '{printf("%s\t%s\t%d\n", $1, $2, $3)}' nameemailavg.csv
+
+
+	Art Venere	art@venere.org	256
+	Lenna Paprocki	lpaprocki@hotmail.com	259
+	Donette Foller	donette.foller@cox.net	282
+	Simona Morasca	simona@morasca.com	139
+	Dominque Dickerson	dominque.dickerson@dickerson.org	167
+	Leota Dilliard	leota@hotmail.com	253
+	Sage Wieser	sage_wieser@cox.net	155
+	Kris Cho	kris@gmail.com	210
+	Minna Amigon	minna_amigon@yahoo.com	95
+	Abel Maclead	amaclead@gmail.com	225
+	Kiley Caldarera	kiley.caldarera@aol.com	172
+	Graciela Ruta	gruta@cox.net	202
+	Josephine Darakjy	josephine_darakjy@darakjy.org	178
+	Cammy Albares	calbares@gmail.com	290
+	Mattie Poquette	mattie@aol.com	283
+	Meaghan Garufi	meaghan@hotmail.com	227
+	Gladys Rim	gladys.rim@rim.org	243
+	Yuki Whobrey	yuki_whobrey@aol.com	128
+	Fletcher Flosi	fletcher.flosi@yahoo.com	221
