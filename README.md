@@ -290,3 +290,21 @@ OR
 	Yuki Whobrey         yuki_whobrey@aol.com                128.32
 	Fletcher Flosi       fletcher.flosi@yahoo.com            221.39
 
+
+
+### STRING MANIPULATION USING INBUILD FUNCTIONS
+
+	A) Using sub(/regexp/,<replace_pattern_with>) function to replace a string pattern :
+
+	awk '{sub(/the/,""); print}' dukeofyork.txt 
+	
+	The grand old Duke of York
+	He had ten thousand men
+	He marched m up to the top of the hill
+	And he marched m down again
+	And when y were up they were up
+	And when y were down they were down
+	And when y were only half-way up
+	They were neir up nor down
+
+
