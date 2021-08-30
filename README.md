@@ -332,3 +332,16 @@ OR
 	And when ALL OF THEM were down ALL OF THEM were down
 	And when ALL OF THEM were only half-way up
 	They were neither up nor down
+	
+	
+	
+### ARRAYS
+
+
+	A) Associative arrays:
+
+	awk '{a["first"]=$1; a["second"]=$2 ; a["third"]=$3; print a["third"], a["second"], a["first"]}'
+
+	one two three
+	three two one
+
