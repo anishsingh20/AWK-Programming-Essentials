@@ -357,3 +357,54 @@ OR
 	third three
 
 
+
+	C) Number of occurrences of each distinct word in an input:
+	
+	awk -f count_words.awk dukeofyork.txt  | sort -rn  -k 2
+	
+	
+	were 6
+	they 6
+	up 5
+	down 4
+	and 4
+	when 3
+	the 3
+	he 3
+	them 2
+	of 2
+	marched 2
+	york 1
+	top 1
+	to 1
+	thousand 1
+	ten 1
+	only 1
+	old 1
+	nor 1
+	neither 1
+	men 1
+	hill 1
+	half-way 1
+	had 1
+	grand 1
+	duke 1
+	again 1
+	
+	
+	THE AWK PROGRAM: count_words.awk
+	
+	{
+	        for( i=1 ; i<=NF; i++) {
+	                words[tolower($i)]++;
+	        } 
+	
+	
+	}
+	
+	END {
+	        for (i in words) {
+	                print i, words[i];
+	        }
+	
+	}
