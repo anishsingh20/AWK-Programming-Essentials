@@ -307,4 +307,15 @@ OR
 	And when y were only half-way up
 	They were neir up nor down
 
+	B) Another example of using sub() function to replace a string pattern:
+	
+	awk '{sub(/the[ym]/,"ALL OF THEM"); print}' dukeofyork.txt 
+	
+	The grand old Duke of York
+	He had ten thousand men
+	He marched ALL OF THEM up to the top of the hill
+	And he marched ALL OF THEM down again
+	And when ALL OF THEM were up they were up
+	And when ALL OF THEM were down they were down
+	And when ALL OF THEM were only half-way up
 
