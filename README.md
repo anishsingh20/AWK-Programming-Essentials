@@ -344,4 +344,16 @@ OR
 
 	one two three
 	three two one
+	
+	
+	
+	B) Using a for loop to traverse the arrray:
+	
+	awk '{a["first"]=$1; a["second"]=$2 ; a["third"]=$3; for(i in a) {print i, a[i] }}'
+	
+	
+	one two three four
+	first one
+	third three
+
 
