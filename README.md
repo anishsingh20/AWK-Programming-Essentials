@@ -408,3 +408,61 @@ OR
 	        }
 	
 	}
+	
+	
+	
+	
+	
+	
+### PIPES
+	
+	
+	A) Printing total size of .docx files in a directory:
+
+
+	ls -l | awk '/\.docx$/{total += $5} END{print total}'
+	
+	2399490
+	
+
+	B) All the AWK files and their sizes from a file ls.out
+
+	awk '/.awk*/{total += $5; print } END{print total}' ls.out 
+	
+	-rwxr-xr-x@ 1 anish.walia  staff    281 Jun  7 16:33 awk.out*
+	-rw-r--r--  1 anish.walia  staff     89 Aug 18 13:53 condition.awk
+	-rw-r--r--  1 anish.walia  staff    114 Aug 30 18:53 count_words.awk
+	-rwxr-xr-x@ 1 anish.walia  staff  10886 Jun  7 16:33 csv.awk*
+	-rwxr-xr-x@ 1 anish.walia  staff    207 Jun  7 16:33 excel_final.awk*
+	-rwxr-xr-x@ 1 anish.walia  staff     79 Jun  7 16:33 firstthree.awk*
+	-rw-r--r--  1 anish.walia  staff     82 Aug 18 13:59 forloop.awk
+	-rwxr-xr-x@ 1 anish.walia  staff    370 Jun  7 16:33 join.awk*
+	-rwxr-xr-x@ 1 anish.walia  staff    154 Jun  7 16:33 removethe.awk*
+	-rwxr-xr-x@ 1 anish.walia  staff    518 Jun  7 16:33 scores_final.awk*
+	-rwxr-xr-x@ 1 anish.walia  staff     88 Jun  7 16:33 shortlong.awk*
+	-rwxr-xr-x@ 1 anish.walia  staff    241 Jun  7 16:33 transpose.awk*
+	-rwxr-xr-x@ 1 anish.walia  staff    112 Jun  7 16:33 wordusage.awk*
+	
+	13221
+	
+
+	C) Using sed to first replace all .awk* files to .awk:
+	
+	sed 's/\*$//' ls.out |   awk '/.awk*/{total += $5; print } END{print total}' 
+	
+	-rwxr-xr-x@ 1 anish.walia  staff    281 Jun  7 16:33 awk.out
+	-rw-r--r--  1 anish.walia  staff     89 Aug 18 13:53 condition.awk
+	-rw-r--r--  1 anish.walia  staff    114 Aug 30 18:53 count_words.awk
+	-rwxr-xr-x@ 1 anish.walia  staff  10886 Jun  7 16:33 csv.awk
+	-rwxr-xr-x@ 1 anish.walia  staff    207 Jun  7 16:33 excel_final.awk
+	-rwxr-xr-x@ 1 anish.walia  staff     79 Jun  7 16:33 firstthree.awk
+	-rw-r--r--  1 anish.walia  staff     82 Aug 18 13:59 forloop.awk
+	-rwxr-xr-x@ 1 anish.walia  staff    370 Jun  7 16:33 join.awk
+	-rwxr-xr-x@ 1 anish.walia  staff    154 Jun  7 16:33 removethe.awk
+	-rwxr-xr-x@ 1 anish.walia  staff    518 Jun  7 16:33 scores_final.awk
+	-rwxr-xr-x@ 1 anish.walia  staff     88 Jun  7 16:33 shortlong.awk
+	-rwxr-xr-x@ 1 anish.walia  staff    241 Jun  7 16:33 transpose.awk
+	-rwxr-xr-x@ 1 anish.walia  staff    112 Jun  7 16:33 wordusage.awk
+	13221
+
+
