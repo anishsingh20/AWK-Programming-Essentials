@@ -408,3 +408,153 @@ OR
 	        }
 	
 	}
+	
+	
+	
+	
+	
+	
+### PIPES
+	
+	
+	A) Printing total size of .docx files in a directory:
+
+
+	ls -l | awk '/\.docx$/{total += $5} END{print total}'
+	
+	2399490
+	
+
+	B) All the AWK files and their sizes from a file ls.out
+
+	awk '/.awk*/{total += $5; print } END{print total}' ls.out 
+	
+	-rwxr-xr-x@ 1 anish.walia  staff    281 Jun  7 16:33 awk.out*
+	-rw-r--r--  1 anish.walia  staff     89 Aug 18 13:53 condition.awk
+	-rw-r--r--  1 anish.walia  staff    114 Aug 30 18:53 count_words.awk
+	-rwxr-xr-x@ 1 anish.walia  staff  10886 Jun  7 16:33 csv.awk*
+	-rwxr-xr-x@ 1 anish.walia  staff    207 Jun  7 16:33 excel_final.awk*
+	-rwxr-xr-x@ 1 anish.walia  staff     79 Jun  7 16:33 firstthree.awk*
+	-rw-r--r--  1 anish.walia  staff     82 Aug 18 13:59 forloop.awk
+	-rwxr-xr-x@ 1 anish.walia  staff    370 Jun  7 16:33 join.awk*
+	-rwxr-xr-x@ 1 anish.walia  staff    154 Jun  7 16:33 removethe.awk*
+	-rwxr-xr-x@ 1 anish.walia  staff    518 Jun  7 16:33 scores_final.awk*
+	-rwxr-xr-x@ 1 anish.walia  staff     88 Jun  7 16:33 shortlong.awk*
+	-rwxr-xr-x@ 1 anish.walia  staff    241 Jun  7 16:33 transpose.awk*
+	-rwxr-xr-x@ 1 anish.walia  staff    112 Jun  7 16:33 wordusage.awk*
+	
+	13221
+	
+
+	C) Using sed to first replace all .awk* files to .awk:
+	
+	sed 's/\*$//' ls.out |   awk '/.awk*/{total += $5; print } END{print total}' 
+	
+	-rwxr-xr-x@ 1 anish.walia  staff    281 Jun  7 16:33 awk.out
+	-rw-r--r--  1 anish.walia  staff     89 Aug 18 13:53 condition.awk
+	-rw-r--r--  1 anish.walia  staff    114 Aug 30 18:53 count_words.awk
+	-rwxr-xr-x@ 1 anish.walia  staff  10886 Jun  7 16:33 csv.awk
+	-rwxr-xr-x@ 1 anish.walia  staff    207 Jun  7 16:33 excel_final.awk
+	-rwxr-xr-x@ 1 anish.walia  staff     79 Jun  7 16:33 firstthree.awk
+	-rw-r--r--  1 anish.walia  staff     82 Aug 18 13:59 forloop.awk
+	-rwxr-xr-x@ 1 anish.walia  staff    370 Jun  7 16:33 join.awk
+	-rwxr-xr-x@ 1 anish.walia  staff    154 Jun  7 16:33 removethe.awk
+	-rwxr-xr-x@ 1 anish.walia  staff    518 Jun  7 16:33 scores_final.awk
+	-rwxr-xr-x@ 1 anish.walia  staff     88 Jun  7 16:33 shortlong.awk
+	-rwxr-xr-x@ 1 anish.walia  staff    241 Jun  7 16:33 transpose.awk
+	-rwxr-xr-x@ 1 anish.walia  staff    112 Jun  7 16:33 wordusage.awk
+	13221
+
+
+
+
+
+	D) Pre-processing a AWK program with other:
+	
+	awk '{print $1,  $2 , "<" $3 ">"}' nicknames.txt 
+	
+	Alex Loader <alex@loader.com>
+	Lashon Vizarro <lashon@aol.com>
+	Lauran Burnard <lburnard@burnard.com>
+	Ceola Setter <ceola.setter@setter.org>
+	My Rantanen <my@hotmail.com>
+	Lorrine Worlds <lorrine.worlds@worlds.com>
+	Peggie Sturiale <peggie@cox.net>
+	Marvel Raymo <mraymo@yahoo.com>
+	Daron Dinos <daron_dinos@cox.net>
+	An Fritz <an_fritz@hotmail.com>
+	Portia Stimmel <portia.stimmel@aol.com>
+	Rhea Aredondo <rhea_aredondo@cox.net>
+	Benedict Sama <bsama@cox.net>
+	Alyce Arias <alyce@arias.org>
+	Heike Berganza <heike@gmail.com>
+	Carey Dopico <carey_dopico@dopico.org>
+	Dottie Hellickson <dottie@hellickson.org>
+	Deandrea Hughey <deandrea@yahoo.com>
+	Kimberlie Duenas <kimberlie_duenas@yahoo.com>
+	Martina Staback <martina_staback@staback.com>
+	Skye Fillingim <skye_fillingim@yahoo.com>
+	Jade Farrar <jade.farrar@yahoo.com>
+	Charlene Hamilton <charlene.hamilton@hotmail.com>
+	Geoffrey Acey <geoffrey@gmail.com>
+	Stevie Westerbeck <stevie.westerbeck@yahoo.com>
+	Pamella Fortino <pamella@fortino.com>
+	Harrison Haufler <hhaufler@hotmail.com>
+	Johnna "Zip" <Engelberg>
+	Buddy Cloney <buddy.cloney@yahoo.com>
+	Dalene Riden <dalene.riden@aol.com>
+	Jerry "Killer" <Zurcher>
+	Haydee Denooyer <hdenooyer@denooyer.org>
+	Joseph Cryer <joseph_cryer@cox.net>
+	Deonna Kippley <deonna_kippley@hotmail.com>
+	Raymon Calvaresi <raymon.calvaresi@gmail.com>
+	Alecia Bubash <alecia@aol.com>
+	
+	
+	
+	The above 2 columns have one extra field of nicknames in them, which is the 2nd column.
+	
+	
+	
+	E) Pre-processing 2 AWK programs: In the below we intentionally set the 2nd field to empty
+	
+	awk '{if(NF==4){$2=""}; print}' nicknames.txt | awk '{print $1 , $2, "<" $3 ">"}'
+	
+	
+	Alex Loader <alex@loader.com>
+	Lashon Vizarro <lashon@aol.com>
+	Lauran Burnard <lburnard@burnard.com>
+	Ceola Setter <ceola.setter@setter.org>
+	My Rantanen <my@hotmail.com>
+	Lorrine Worlds <lorrine.worlds@worlds.com>
+	Peggie Sturiale <peggie@cox.net>
+	Marvel Raymo <mraymo@yahoo.com>
+	Daron Dinos <daron_dinos@cox.net>
+	An Fritz <an_fritz@hotmail.com>
+	Portia Stimmel <portia.stimmel@aol.com>
+	Rhea Aredondo <rhea_aredondo@cox.net>
+	Benedict Sama <bsama@cox.net>
+	Alyce Arias <alyce@arias.org>
+	Heike Berganza <heike@gmail.com>
+	Carey Dopico <carey_dopico@dopico.org>
+	Dottie Hellickson <dottie@hellickson.org>
+	Deandrea Hughey <deandrea@yahoo.com>
+	Kimberlie Duenas <kimberlie_duenas@yahoo.com>
+	Martina Staback <martina_staback@staback.com>
+	Skye Fillingim <skye_fillingim@yahoo.com>
+	Jade Farrar <jade.farrar@yahoo.com>
+	Charlene Hamilton <charlene.hamilton@hotmail.com>
+	Geoffrey Acey <geoffrey@gmail.com>
+	Stevie Westerbeck <stevie.westerbeck@yahoo.com>
+	Pamella Fortino <pamella@fortino.com>
+	Harrison Haufler <hhaufler@hotmail.com>
+	Johnna Engelberg <jlengelberg@engelberg.org>
+	Buddy Cloney <buddy.cloney@yahoo.com>
+	Dalene Riden <dalene.riden@aol.com>
+	Jerry Zurcher <jzurcher@zurcher.org>
+	Haydee Denooyer <hdenooyer@denooyer.org>
+	Joseph Cryer <joseph_cryer@cox.net>
+	Deonna Kippley <deonna_kippley@hotmail.com>
+	Raymon Calvaresi <raymon.calvaresi@gmail.com>
+	Alecia Bubash <alecia@aol.com>
+
